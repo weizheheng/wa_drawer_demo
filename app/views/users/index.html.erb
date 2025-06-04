@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-4">
+  <%= link_to "Link to same page", users_path, class: "" %>
+
+  <div data-controller="wa-drawer">
+    <wa-drawer label="Drawer" id="drawer-overview" placement="bottom">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <wa-button slot="footer" variant="brand" data-drawer="close">Close</wa-button>
+    </wa-drawer>
+
+    <%= tag.wa_button(
+      data: {
+        wa_drawer_target: "toggleButton",
+        action: "click->wa-drawer#open",
+      },
+    ) do %>
+      Open Drawer
+    <% end %>
+  </div>
+</div>
